@@ -10,7 +10,7 @@
 
   let clicked = 0;
 
-  import { MasonryInfiniteGrid } from "@egjs/svelte-infinitegrid";
+  import { PackingInfiniteGrid } from "@egjs/svelte-infinitegrid";
 
   let items = getItems(0, 10);
 
@@ -50,12 +50,118 @@
 	:global(img) { opacity: .9; transition: all .2s }
 	:global(img):hover { opacity: 1; transform: scale(1.04) }
 
-	* :global(.card-media-16x9) {
+	/* * :global(.card-media-16x9) {
 		background-image: url(https://place-hold.it/320x180?text=16x9&fontsize=23);
 	}
 	
 	* :global(.card-media-square) {
 		background-image: url(https://place-hold.it/320x320?text=square&fontsize=23);
+	} */
+
+	html, body {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background: #fff;
+	}
+
+	a {
+	color: unset;
+	text-decoration: none;
+	}
+
+	.header {
+	text-align: center;
+	background: #333;
+	color: #fff;
+	padding: 20px 0px;
+	margin: 0;
+	margin-bottom: 10px;
+	}
+
+	.description {
+	padding: 6px 30px;
+	margin: 0;
+	font-weight: 400;
+	}
+
+	.description li {
+	padding: 3px 0px;
+	}
+
+	.wrapper {
+	margin-top: 50px;
+	}
+
+	.container {
+	width: 100%;
+	height: 600px;
+	}
+
+	.item {
+	display: inline-block;
+	width: 250px;
+	opacity: 1;
+	}
+
+	.masonrygrid.horizontal .item {
+	width: auto;
+	height: 250px;
+	}
+
+	.item .thumbnail {
+	overflow: hidden;
+	border-radius: 8px;
+	}
+
+	.item .thumbnail img {
+	width: 100%;
+	border-radius: 8px;
+	}
+
+	.masonrygrid.horizontal .item .thumbnail img {
+	width: auto;
+	height: 210px;
+	}
+
+	.item .info {
+	margin-top: 10px;
+	font-weight: bold;
+	color: #777;
+	}
+
+	.item.animate {
+	transition: opacity ease 1s;
+	transition-delay: 0.2s;
+	opacity: 1;
+	}
+
+	.placeholder {
+	width: 250px;
+	border-radius: 5px;
+	background: #eee;
+	height: 250px;
+	}
+
+
+	.loading {
+	position: absolute;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-weight: bold;
+	}
+
+	.button-area {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	height: 50px;
+	z-index: 1;
 	}
 </style>
 
@@ -65,7 +171,7 @@
 	<p>In the mean time, enjoy these pics.</p>
 </main>
 
-<MasonryInfiniteGrid
+<PackingInfiniteGrid
   class="container"
   gap={5}
   {items}
@@ -84,14 +190,14 @@
 			src={`https://naver.github.io/egjs-infinitegrid/assets/image/${
 				(item.key % 33) + 1
 			}.jpg`}
-			alt="egjs" 
+			alt="egjs"
+			style="width: 100%; height: 100%"
 			/>
 		 </a>
       </div>
-      <div class="info">{`egjs ${item.key}`}</div>
     </div>
   {/each}
-</MasonryInfiniteGrid>
+</PackingInfiniteGrid>
 
 <!--
 <div class="card-display">
