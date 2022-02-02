@@ -1,9 +1,9 @@
 <script>
-	// export let name;
+	export let name;
 </script>
 
 <main>
-	<h1>Welcome to Adam's Website</h1>
+	<h1>Welcome to {name}'s Website</h1>
 	<p>He is currently learning Svelte and how to make a personal website. Please check back later for updates.</p>
 </main>
 
