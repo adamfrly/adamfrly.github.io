@@ -79,7 +79,7 @@
   {#each visibleItems as item (item.key)}
     <div class="item">
       <div class="thumbnail">
-		<a href="https://www.youtube.com/watch?v=oYmqJl4MoNI">
+		<a href="https://www.youtube.com/watch?v=oYmqJl4MoNI" target="_blank">
 			<img
 			src={`https://naver.github.io/egjs-infinitegrid/assets/image/${
 				(item.key % 33) + 1
