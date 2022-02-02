@@ -1,22 +1,29 @@
 <script>
     import { onMount, createEventDispatcher } from "svelte";
     import { tick } from "svelte";
+
     export let gap = 10;
     export let maxColumnWidth = 250;
     export let hover = false;
     export let loading;
+
     const dispatch = createEventDispatcher();
+
     let slotHolder = null;
     let columns = [];
     let galleryWidth = 0;
     let columnCount = 0;
+
     $: columnCount = parseInt(galleryWidth / maxColumnWidth) || 1;
     $: columnCount && Draw();
     $: galleryStyle = `grid-template-columns: repeat(${columnCount}, 1fr); --gap: ${gap}px`;
+    
     onMount(Draw);
+    
     function HandleClick(e) {
         dispatch("click", { src: e.target.src, alt: e.target.alt, loading: e.target.loading, class: e.target.className });
     }
+    
     async function Draw() {
         await tick();
         if (!slotHolder) {
