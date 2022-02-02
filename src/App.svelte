@@ -3,11 +3,6 @@
 	export let name;
 </script>
 
-<main>
-	<h1>Welcome to {name}'s Website</h1>
-	<p>He is currently learning Svelte and how to make a personal website. Please check back later for updates.</p>
-</main>
-
 <style>
 	main {
 		text-align: center;
@@ -32,35 +27,23 @@
 	:global(img):hover { opacity: 1; transform: scale(1.04) }
 </style>
 
+<main>
+	<h1>Welcome to {name}'s Website</h1>
+	<p>He is currently learning Svelte and how to make a personal website. Please check back later for updates.</p>
+</main>
+
 <Gallery>
-	<img src="https://via.placeholder.com/180x200/1" alt="">
-	<img src="https://via.placeholder.com/200x280/1" alt="">
-	<img src="https://via.placeholder.com/250x200/1" alt="">
-	<img src="https://via.placeholder.com/140x310/1" alt="">
-	<img src="https://via.placeholder.com/280x300/1" alt="">
-	<img src="https://via.placeholder.com/220x100/1" alt="">
-	<img src="https://via.placeholder.com/180x150/1" alt="">
-	<img src="https://via.placeholder.com/210x180/1" alt="">
-	<img src="https://via.placeholder.com/210x200/1" alt="">
-	<img src="https://via.placeholder.com/200x250/1" alt="">
-	<img src="https://via.placeholder.com/220x200/1" alt="">
-	<img src="https://via.placeholder.com/180x240/1" alt="">
-	<img src="https://via.placeholder.com/210x210/1" alt="">
-	<img src="https://via.placeholder.com/200x220/1" alt="">
-	<img src="https://via.placeholder.com/210x200/1" alt="">
-	<img src="https://via.placeholder.com/180x200/1" alt="">
-	<img src="https://via.placeholder.com/200x280/1" alt="">
-	<img src="https://via.placeholder.com/250x200/1" alt="">
-	<img src="https://via.placeholder.com/140x210/1" alt="">
-	<img src="https://via.placeholder.com/280x200/1" alt="">
-	<img src="https://via.placeholder.com/220x100/1" alt="">
-	<img src="https://via.placeholder.com/180x150/1" alt="">
-	<img src="https://via.placeholder.com/210x180/1" alt="">
-	<img src="https://via.placeholder.com/210x200/1" alt="">
-	<img src="https://via.placeholder.com/200x250/1" alt="">
-	<img src="https://via.placeholder.com/220x200/1" alt="">
-	<img src="https://via.placeholder.com/180x240/1" alt="">
-	<img src="https://via.placeholder.com/210x210/1" alt="">
-	<img src="https://via.placeholder.com/200x220/1" alt="">
-	<img src="https://via.placeholder.com/210x200/1" alt="">
+	<img src="images/pigeons.jpg" alt="">
+	<img src="images/china.jpg" alt="">
+	<img src="images/dontgiveup.jpg" alt="">
+	<img src="images/pose.jpg" alt="">
+	<img src="images/pray.jpg" alt="">
+	<img src="images/meat.jpg" alt="">
+	<img src="images/tyler.jpg" alt="">
+	<img src="images/wisconsin.jpg" alt="">
+	<img src="images/avatar.jpg" alt="">
+	<img src="images/brocoli.jpg" alt="">
+	<img src="images/knuckles.jpg" alt="">
+	<img src="images/truck.jpg" alt="">
+
 </Gallery>
