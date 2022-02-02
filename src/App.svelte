@@ -30,20 +30,27 @@
 <main>
 	<h1>Welcome to {name}'s Website</h1>
 	<p>He is currently learning Svelte and how to make a personal website. Please check back later for updates.</p>
+	<p>In the mean time, enjoy these pics.</p>
 </main>
 
 <Gallery>
-	<img src="images/pigeons.jpg" alt="">
-	<img src="images/china.jpg" alt="">
+	<img src="images/wisconsin.jpg" alt="">
 	<img src="images/dontgiveup.jpg" alt="">
+	<img src="images/china.jpg" alt="">
 	<img src="images/pose.jpg" alt="">
 	<img src="images/pray.jpg" alt="">
-	<img src="images/meat.jpg" alt="">
-	<img src="images/tyler.jpg" alt="">
-	<img src="images/wisconsin.jpg" alt="">
+	<img src="images/ape.jpg" alt="">
 	<img src="images/avatar.jpg" alt="">
-	<img src="images/brocoli.jpg" alt="">
-	<img src="images/knuckles.jpg" alt="">
 	<img src="images/truck.jpg" alt="">
+	<img src="images/knuckles.jpg" alt="">
+	<img src="images/brocoli.jpg" alt="">
+	<img src="images/tyler.jpg" alt="">
+	<img src="images/bow.jpg" alt="">
+	<img src="images/meat.jpg" alt="">
+	<img src="images/dog.jpg" alt="">
+	<img src="images/pigeons.jpg" alt="">
+	<img src="images/marketing.jpg" alt="">
+	<img src="images/garfield.jpg" alt="">
+
 
 </Gallery>
