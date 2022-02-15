@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Gallery from "../components/Gallery.svelte";
-	import handleClick from "../components/Gallery.svelte";
+	import Gallery from "./Gallery.svelte";
+	import handleClick from "./Gallery.svelte";
 	import Card, {
     Content,
     PrimaryAction,
@@ -10,7 +10,7 @@
 
   let clicked = 0;
 
-  import { PackingInfiniteGrid } from "@egjs/svelte-infinitegrid";
+  import { MasonryInfiniteGrid } from "@egjs/svelte-infinitegrid";
 
   let items = getItems(0, 10);
 
@@ -47,7 +47,7 @@
 			max-width: none;
 		}
 	}
-	:global(img) { opacity: .9; transition: all .2s }
+	:global(img) { opacity: .99; transition: all .2s }
 	:global(img):hover { opacity: 1; transform: scale(1.04) }
 
 	/* * :global(.card-media-16x9) {
@@ -112,7 +112,7 @@
 
 	.item .thumbnail {
 	overflow: hidden;
-	border-radius: 8px;
+	border-radius: 2px;
 	}
 
 	.item .thumbnail img {
@@ -171,9 +171,11 @@
 	<p>In the mean time, enjoy these pics.</p>
 </main>
 
-<PackingInfiniteGrid
+
+<MasonryInfiniteGrid
   class="container"
-  gap={5}
+  gap={1}
+  columnSizeRatio={0}
   {items}
   on:requestAppend={({ detail: e }) => {
     const nextGroupKey = (+e.groupKey || 0) + 1;
@@ -185,7 +187,7 @@
   {#each visibleItems as item (item.key)}
     <div class="item">
       <div class="thumbnail">
-		<a href="https://www.youtube.com/watch?v=oYmqJl4MoNI" target="_blank">
+        <a href="https://www.youtube.com/watch?v=oYmqJl4MoNI" target="_blank">
 			<img
 			src={`https://naver.github.io/egjs-infinitegrid/assets/image/${
 				(item.key % 33) + 1
@@ -197,62 +199,8 @@
       </div>
     </div>
   {/each}
-</PackingInfiniteGrid>
+</MasonryInfiniteGrid>
 
-<!--
-<div class="card-display">
-	<div class="card-container">
-	  <Card>
-		<Media class="card-media-16x9" aspectRatio="16x9">
-		  <MediaContent>
-			<h2
-			  class="mdc-typography--headline6"
-			  style="color: #fff; position: absolute; bottom: 16px; left: 16px; margin: 0;"
-			>
-			  A card with 16x9 media.
-			</h2>
-		  </MediaContent>
-		</Media>
-		<Content style="color: #888;">Here's some gray text down here.</Content>
-	  </Card>
-	</div>
-   
-	<div class="card-container">
-	  <Card style="min-width: 300px;">
-		<Media class="card-media-square" aspectRatio="square">
-		  <div style="color: #fff; position: absolute; bottom: 16px; left: 16px;">
-			<h2 class="mdc-typography--headline6" style="margin: 0;">
-			  A card with square media.
-			</h2>
-			<h3 class="mdc-typography--subtitle2" style="margin: 0;">
-			  And a subtitle.
-			</h3>
-		  </div>
-		</Media>
-	  </Card>
-	</div>
-   
-	<div class="card-container">
-	  <Card>
-		<div style="padding: 1rem;">
-		  <h2 class="mdc-typography--headline6" style="margin: 0;">
-			A card with media.
-		  </h2>
-		  <h3 class="mdc-typography--subtitle2" style="margin: 0; color: #888;">
-			And a subtitle.
-		  </h3>
-		</div>
-		<PrimaryAction on:click={() => clicked++}>
-		  <Media class="card-media-16x9" aspectRatio="16x9" />
-		  <Content class="mdc-typography--body2">
-			And some info text. And the media and info text are a primary action
-			for the card.
-		  </Content>
-		</PrimaryAction>
-	  </Card>
-	</div>
-  </div>
--->
 
 <!-- <Gallery loading="eager">
 	<img src="images/wisconsin.jpg" alt="">
