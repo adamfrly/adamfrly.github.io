@@ -8,9 +8,12 @@
     MediaContent,
   } from '@smui/card';
 
-  let clicked = 0;
+  let noteBgColor = '#f4ed2a';
+  let noteColor = '#FF5555';
+  // let windowSize = ; // TODO make a variable length column size
+  $: cssVarStyles = `--note-color:${noteColor};--note-bg-color:${noteBgColor}`;
 
-  import { MasonryInfiniteGrid } from "@egjs/svelte-infinitegrid";
+  import { MasonryInfiniteGrid } from "@egjs/svelte-infinitegrid"; // TODO Figure out why this throws an error but still works
 
   let items = getItems(0, 10);
 
@@ -107,7 +110,7 @@
 
 	.masonrygrid.horizontal .item {
 	width: auto;
-	height: 250px;
+	height: 250px; /* TODO make it a variable length column size*/
 	}
 
 	.item .thumbnail {
@@ -175,7 +178,6 @@
 <MasonryInfiniteGrid
   class="container"
   gap={1}
-  columnSizeRatio={0}
   {items}
   on:requestAppend={({ detail: e }) => {
     const nextGroupKey = (+e.groupKey || 0) + 1;
