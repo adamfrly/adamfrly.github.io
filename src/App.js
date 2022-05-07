@@ -8,18 +8,18 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <div>
+        <header className='App-nav'>
           <nav>
-            <ul id="navigation">
+            <ul class="App-nav" id="navigation">
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/" style={{ textDecoration: 'none' }}>Home</Link>
               </li>
               <li>
-                <Link to="/projects">Projects</Link>
+                <Link to="/projects" style={{ textDecoration: 'none' }}>Projects</Link>
               </li>
             </ul>
           </nav>
-        </div>
+        </header>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/projects" element={<PastProjects />}/>
